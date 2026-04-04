@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 
 export default function GettingStarted() {
@@ -53,9 +51,9 @@ export default function GettingStarted() {
                 </div>
               </div>
 
-              <h4 className="text-[20px] lg:text-[22px] font-bold text-[#1E1E1E] max-w-[280px] leading-[1.3] transition-colors group-hover:text-[#ED3C6A] font-dm-sans">
+              <h3 className="text-[20px] lg:text-[22px] font-bold text-[#1E1E1E] max-w-[280px] leading-[1.3] transition-colors group-hover:text-[#ED3C6A] font-dm-sans">
                 {step.title}
-              </h4>
+              </h3>
             </div>
           ))}
         </div>

@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FOOTER_LINKS } from '@/lib/constants';
 
 // Custom Brand Icons (since Lucide v1.x removed brand logos)
 const XIcon = ({ size = 20 }: { size?: number }) => (

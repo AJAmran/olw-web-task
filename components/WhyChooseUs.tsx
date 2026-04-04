@@ -3,7 +3,9 @@
 import { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Check, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import ScheduleMeetingBtn from './ScheduleMeetingBtn';
+import FeatureList from './FeatureList';
 import {
   format,
   addMonths,
@@ -82,11 +84,11 @@ const Calendar = () => {
 };
 
 export default function WhyChooseUs() {
-  const features = [
-    { title: "Brilliant Client Service" },
-    { title: "Flexibility & Adaptability" },
-    { title: "We make it Personal" },
-    { title: "Expert team members" }
+  const chooseUsFeatures = [
+    "Brilliant Client Service",
+    "Flexibility & Adaptability",
+    "We make it Personal",
+    "We have experts in our team"
   ];
 
   return (
@@ -109,38 +111,14 @@ export default function WhyChooseUs() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             </p>
 
-            <div className="flex flex-col gap-[14px] mb-[44px]">
-              {[
-                "Brilliant Client Service",
-                "Flexibility & Adaptability",
-                "We make it Personal",
-                "We have experts in our team"
-              ].map((text, i) => (
-                <div key={i} className="flex items-center gap-[8px]">
-                  <div className="w-[32px] h-[32px] rounded-full bg-[#ED3C6A]/10 flex items-center justify-center">
-                    <Check size={18} className="text-[#ED3C6A]" />
-                  </div>
-                  <span className="text-[18px] font-bold text-black">{text}</span>
-                </div>
-              ))}
-            </div>
+            <FeatureList 
+              items={chooseUsFeatures} 
+              className="mb-[44px]"
+            />
 
-            <button
-              type="button"
-              className="w-[201px] h-[50px] bg-[#ED3C6A] text-white flex items-center justify-center gap-2 rounded-[5px] font-bold text-[15px] hover:bg-opacity-90 transition-all cursor-pointer whitespace-nowrap"
-            >
-              Schedule A Meeting
-              <ChevronRight size={16} />
-            </button>
+            <ScheduleMeetingBtn className="min-w-[201px] h-[50px] px-4" />
           </motion.div>
 
-          {/* Right Visual Visual Composition area */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="hidden lg:block relative h-[500px] w-full"
-          >
           {/* Right Visual Visual Composition area */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -155,10 +133,10 @@ export default function WhyChooseUs() {
             ></div>
 
             {/* Worker image - Shifted left to follow the blob */}
-            <div className="absolute left-[83px] top-[0px] w-[327px] h-[437px] z-20 pointer-events-none">
+            <div className="absolute left-[83px] top-0 w-[327px] h-[437px] z-20 pointer-events-none">
               <Image
                 src="/assets/Why%20you%20Choose%20us/smilling-male-office-worker.png"
-                alt=""
+                alt="Professional STR Assistant"
                 fill
                 className="object-contain"
                 priority
@@ -169,7 +147,7 @@ export default function WhyChooseUs() {
             {/* Listing Card (Group 39886) */}
             <div className="absolute left-[-70px] top-[34px] w-[254px] h-[105px] z-30 bg-white rounded-[15px] shadow-xl p-3 flex gap-3 border border-white/50 backdrop-blur-sm">
               <div className="relative w-[100px] h-full rounded-[8px] overflow-hidden shrink-0">
-                <Image src="/assets/Why%20you%20Choose%20us/room-image.png" alt="" fill className="object-cover" />
+                <Image src="/assets/Why%20you%20Choose%20us/room-image.png" alt="Smart Dashboard Visualization" fill className="object-cover" />
               </div>
               <div className="flex flex-col justify-center gap-1.5 overflow-hidden">
                 <div className="w-[80px] h-[6px] bg-gray-100 rounded-full"></div>
@@ -182,7 +160,7 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Brands Card (Group 39885) - Shifted inward from right edge */}
-            <div className="absolute left-[350px] top-[18px] w-[159px] h-[164px] z-40 bg-white rounded-[15px] shadow-xl p-4 grid grid-cols-2 gap-3 border border-gray-50 flex items-center justify-center">
+            <div className="absolute left-[350px] top-[18px] w-[159px] h-[164px] z-40 bg-white rounded-[15px] shadow-xl p-4 grid grid-cols-2 gap-3 border border-gray-50 items-center justify-center">
               <div className="relative aspect-square bg-[#FF5A5F] rounded-lg flex items-center justify-center p-2">
                 <Image src="/assets/Why%20you%20Choose%20us/airbnb.png" alt="Airbnb" width={22} height={22} className="brightness-0 invert" />
               </div>
@@ -202,10 +180,8 @@ export default function WhyChooseUs() {
               </div>
             </div>
           </motion.div>
-          </motion.div>
         </div>
       </div>
     </section>
   );
 }
-

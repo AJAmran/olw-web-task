@@ -4,6 +4,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
+import ScheduleMeetingBtn from './ScheduleMeetingBtn';
 
 export default function Hero() {
   interface Dot {
@@ -173,23 +174,10 @@ export default function Hero() {
             </p>
 
             {/* Eye-catching Button */}
-            <button
-              type="button"
-              className="absolute bg-[#ED3C6A] rounded-[5px] flex flex-row justify-center items-center gap-[10px] text-white font-bold text-[14px] leading-none cursor-pointer hover:bg-opacity-90 transition-all duration-300 shadow-lg shadow-[#ED3C6A]/20 group whitespace-nowrap"
-              style={{
-                width: '201px',
-                height: '50px',
-                left: '50%',
-                transform: 'translateX(calc(-50% + 0.5px))',
-                top: '489px',
-                padding: '18px 24px'
-              }}
-            >
-              Schedule A Meeting
-              <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
-                <path d="M11 1L15 5M15 5L11 9M15 5H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+            <ScheduleMeetingBtn 
+              variant="primary" 
+              className="absolute left-1/2 -translate-x-[calc(50%-0.5px)] top-[489px] min-w-[201px] h-[50px] px-4"
+            />
 
             {/* See Pricing */}
             <NextLink
@@ -213,27 +201,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-black font-bold leading-[1.2] mb-4 text-[36px] md:text-[48px]">
+            <div className="text-black font-bold leading-[1.2] mb-4 text-[36px] md:text-[48px]">
               Airbnb Assistants For
               <span className="block font-medium text-[28px] md:text-[38px] mt-2">
                 Property Management
               </span>
-            </h1>
+            </div>
 
             <p className="text-[14px] leading-normal text-black max-w-[600px] mb-10 mx-auto font-medium px-4">
               Maximize your rental income and minimize your stress. Our professional management tools and dedicated support team help you scale your Airbnb business effortlessly.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <button
-                type="button"
-                className="w-full sm:w-auto bg-[#ED3C6A] text-white px-8 py-4 rounded-[5px] font-bold text-sm flex items-center justify-center gap-[10px] group whitespace-nowrap"
-              >
-                Schedule A Meeting
-                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="group-hover:translate-x-1 transition-transform">
-                  <path d="M11 1L15 5M15 5L11 9M15 5H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
+              <ScheduleMeetingBtn variant="primary" />
 
               <NextLink
                 href="#pricing"

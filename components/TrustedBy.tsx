@@ -1,7 +1,5 @@
-'use client';
-
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+
 
 export default function TrustedBy() {
   const logoItems = [
@@ -19,9 +17,9 @@ export default function TrustedBy() {
   return (
     <section className="w-full bg-white pt-[115px] pb-[140px]">
       <div className="container-wide mb-[36px]">
-        <h3 className="text-center font-semibold text-[20px] leading-[26px] text-black">
+        <h2 className="text-center font-semibold text-[20px] leading-[26px] text-black">
           Trusted by leaders in 50+ industries
-        </h3>
+        </h2>
       </div>
 
       <div className="bg-[#F6F6F6] w-full h-[77px] flex items-center overflow-hidden">

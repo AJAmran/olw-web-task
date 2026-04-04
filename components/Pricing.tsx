@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 export default function Pricing() {
   const [isYearly, setIsYearly] = useState(false);
@@ -68,21 +69,15 @@ export default function Pricing() {
   return (
     <section id="pricing" className="section-padding bg-white">
       <div className="container-wide">
-        <div className="text-center mb-[48px]">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-[40px] leading-[52px] font-bold text-[#191D23] mb-[12px]">
-              Airbnb Assistant <span className="text-primary lowercase">pricing</span>
-            </h2>
-            <p className="text-[20px] leading-[26px] font-normal text-[#191D23] mb-[36px] max-w-2xl mx-auto">
-              Choose a plan that’s right for you
-            </p>
-          </motion.div>
+        <div className="mb-[48px]">
+          <SectionHeader 
+            title="Airbnb Assistant" 
+            highlightedTitle="pricing" 
+            description="Choose a plan that’s right for you"
+            className="!mb-0"
+          />
 
-          <div className="flex items-center justify-center relative max-w-3xl mx-auto">
+          <div className="flex items-center justify-center relative max-w-3xl mx-auto mt-8">
             <div className="flex items-center gap-[24px]">
               <span className={`text-[16px] transition-colors ${!isYearly ? 'text-[#191D23] font-medium' : 'text-gray-400 font-medium'}`}>
                 Pay Monthly
@@ -111,7 +106,7 @@ export default function Pricing() {
                   <div className="absolute left-0 top-0 w-full h-full">
                     <Image
                       src="/price-saving-arrow.png"
-                      alt=""
+                      alt="Pricing Growth Trend"
                       width={120}
                       height={60}
                       className="object-contain transform rotate-12"
@@ -153,14 +148,15 @@ export default function Pricing() {
 
               <button
                 type="button"
-                className={`w-full py-[14px] rounded-[5px] font-bold text-[18px] transition-all duration-300 cursor-pointer ${plan.isPopular
+                className={`w-full flex items-center justify-center gap-2 py-[14px] rounded-[5px] font-bold text-[18px] transition-all duration-300 cursor-pointer group ${plan.isPopular
                     ? 'bg-white text-[#ED3C6A] hover:bg-gray-50'
                     : 'bg-white border border-[#ED3C6A] text-[#ED3C6A] hover:bg-gray-50'
                   }`}>
                 Get Started Now
+                <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
 
-              <div className="flex flex-col gap-[16px] flex-grow">
+              <div className="flex flex-col gap-[16px] grow">
                 {plan.features.map((feature, j) => (
                   <div key={j} className="flex items-center gap-[12px]">
                     <div className={`shrink-0 w-[24px] h-[24px] rounded-full flex items-center justify-center ${j < plan.activeFeatures
@@ -189,4 +185,3 @@ export default function Pricing() {
     </section>
   );
 }
-

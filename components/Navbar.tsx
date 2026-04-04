@@ -5,6 +5,7 @@ import Image from 'next/image';
 import NextLink from 'next/link';
 import { Menu, X, ChevronRight } from "lucide-react";
 import { NAV_LINKS } from "@/lib/constants";
+import ScheduleMeetingBtn from "./ScheduleMeetingBtn";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,10 +50,7 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:block">
-          <button type="button" className="flex items-center gap-2 bg-gradient-to-r from-[#F04279] to-[#E82B61] hover:from-[#E82B61] hover:to-[#D41C50] transition-colors text-white px-5 py-[10px] rounded-[4px] shadow-sm text-[15px] font-semibold tracking-wide">
-            Schedule A Meeting
-            <ChevronRight size={18} />
-          </button>
+          <ScheduleMeetingBtn variant="navbar" />
         </div>
 
         {/* Mobile Toggle */}
@@ -81,13 +79,7 @@ export default function Navbar() {
                 </NextLink>
               ))}
               <hr className="border-gray-100" />
-              <button
-                type="button"
-                className="w-full bg-[#ED3C6A] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2"
-              >
-                Schedule A Meeting
-                <ChevronRight size={18} />
-              </button>
+              <ScheduleMeetingBtn variant="mobile" />
             </div>
           </div>
         )}

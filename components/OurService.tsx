@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 export default function OurService() {
   const services = [
@@ -46,20 +47,12 @@ export default function OurService() {
 
   return (
     <section id="services" className="section-padding bg-[#FAFAFA]">
-      <div className="container-wide text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary mb-6">
-            Our <span className="text-primary">Services</span>
-          </h2>
-          <p className="text-base md:text-lg text-muted max-w-3xl mx-auto mb-16 leading-relaxed font-medium">
-            We provide a comprehensive suite of tools designed to help property managers and hosts maximize their efficiency and revenue while providing world-class guest experiences.
-          </p>
-        </motion.div>
+      <div className="container-wide">
+        <SectionHeader 
+          title="Our" 
+          highlightedTitle="Services" 
+          description="We provide a comprehensive suite of tools designed to help property managers and hosts maximize their efficiency and revenue while providing world-class guest experiences."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, i) => (
@@ -86,7 +79,7 @@ export default function OurService() {
                 {service.title}
               </h3>
 
-              <p className="text-sm md:text-base text-muted leading-relaxed mb-8 flex-grow font-medium">
+              <p className="text-sm md:text-base text-muted leading-relaxed mb-8 grow font-medium">
                 {service.description}
               </p>
 
@@ -105,4 +98,3 @@ export default function OurService() {
     </section>
   );
 }
-

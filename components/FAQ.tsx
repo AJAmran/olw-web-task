@@ -4,28 +4,23 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Minus, Plus } from 'lucide-react';
 import { FAQ_DATA } from '@/lib/constants';
+import SectionHeader from './SectionHeader';
+import Container from './Container';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="w-full bg-white flex justify-center py-24">
-      <div className="w-[1240px] min-h-[836px] bg-[#F9FAFB] rounded-[16px] flex flex-col items-center py-20 px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-[64px]"
-        >
-          <h2 className="text-[36px] leading-[47px] font-bold text-black mb-[24px]">
-            Frequently asked <span className="text-[#ED3C6A]">questions</span>
-          </h2>
-          <p className="text-[18px] text-black font-medium opacity-80">
-            Everything you need to know about the product and billing.
-          </p>
-        </motion.div>
+    <section id="faq" className="w-full bg-white py-24">
+      <Container size="wide" className="min-h-[836px] bg-[#F9FAFB] rounded-[16px] flex flex-col items-center py-20 px-6">
+        <SectionHeader 
+          title="Frequently asked" 
+          highlightedTitle="questions" 
+          description="Everything you need to know about the product and billing."
+          className="mb-[64px]"
+        />
 
-        <div className="w-[768px] flex flex-col">
+        <div className="w-full max-w-[768px] flex flex-col">
           {FAQ_DATA.map((faq, i) => (
             <div
               key={i}
@@ -63,7 +58,7 @@ export default function FAQ() {
             </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

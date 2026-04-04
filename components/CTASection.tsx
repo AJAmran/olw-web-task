@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 export default function CTASection() {
   return (
@@ -32,9 +33,10 @@ export default function CTASection() {
 
           <button
             type="button"
-            className="bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            className="flex items-center gap-2 bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 cursor-pointer group"
           >
             Get in touch
+            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
           </button>
         </motion.div>
       </div>

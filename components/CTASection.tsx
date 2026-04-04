@@ -2,11 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Button from './Button';
+import Container from './Container';
 
 export default function CTASection() {
   return (
     <section className="section-padding bg-white">
-      <div className="container-wide">
+      <Container size="wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,16 +33,16 @@ export default function CTASection() {
             <p className="text-base md:text-lg text-muted font-medium">Can’t find the answer you’re looking for? Please chat to our friendly team.</p>
           </div>
 
-          <button
-            type="button"
-            className="flex items-center gap-2 bg-primary hover:bg-opacity-90 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95 cursor-pointer group"
+          <Button
+            variant="primary"
+            size="lg"
+            icon={ArrowRight}
+            className="rounded-xl px-10 shadow-lg shadow-primary/20 hover:scale-105 active:scale-95"
           >
             Get in touch
-            <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-          </button>
+          </Button>
         </motion.div>
-      </div>
+      </Container>
     </section>
   );
 }
-

@@ -1,5 +1,7 @@
-import Image from 'next/image';
+'use client';
 
+import Image from 'next/image';
+import Container from './Container';
 
 export default function TrustedBy() {
   const logoItems = [
@@ -12,18 +14,16 @@ export default function TrustedBy() {
     { src: '/assets/trusted-section-images/home-to-go-logo-full.png', alt: 'HomeToGo', width: 120, height: 34 },
   ];
 
-  const duplicatedLogos = [...logoItems, ...logoItems, ...logoItems];
-
   return (
     <section className="w-full bg-white pt-[115px] pb-[140px]">
-      <div className="container-wide mb-[36px]">
+      <Container size="wide" className="mb-[36px]">
         <h2 className="text-center font-semibold text-[20px] leading-[26px] text-black">
           Trusted by leaders in 50+ industries
         </h2>
-      </div>
+      </Container>
 
       <div className="bg-[#F6F6F6] w-full h-[77px] flex items-center overflow-hidden">
-        <div className="container mx-auto px-10 flex items-center justify-between gap-4">
+        <Container size="default" className="flex items-center justify-between gap-4">
           {logoItems.map((logo, index) => (
             <div
               key={index}
@@ -39,9 +39,8 @@ export default function TrustedBy() {
               />
             </div>
           ))}
-        </div>
+        </Container>
       </div>
     </section>
   );
 }
-

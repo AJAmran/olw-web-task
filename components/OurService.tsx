@@ -68,8 +68,9 @@ export default function OurService() {
                 <div className="relative w-8 h-8 md:w-10 md:h-10">
                   <Image
                     src={service.icon}
-                    alt={service.title}
+                    alt={`${service.title} icon`}
                     fill
+                    sizes="(max-width: 768px) 32px, 40px"
                     className="object-contain"
                   />
                 </div>

@@ -42,6 +42,7 @@ const Calendar = () => {
             type="button"
             onClick={() => setCurrentDate(subMonths(currentDate, 1))}
             className="w-6 h-6 bg-secondary rounded flex items-center justify-center hover:bg-black transition-colors"
+            aria-label="Previous month"
           >
             <ChevronLeft size={14} className="text-white" />
           </button>
@@ -49,6 +50,7 @@ const Calendar = () => {
             type="button"
             onClick={() => setCurrentDate(addMonths(currentDate, 1))}
             className="w-6 h-6 bg-secondary rounded flex items-center justify-center hover:bg-black transition-colors"
+            aria-label="Next month"
           >
             <ChevronRight size={14} className="text-white" />
           </button>
@@ -136,8 +138,9 @@ export default function WhyChooseUs() {
             <div className="absolute left-[83px] top-0 w-[327px] h-[437px] z-20 pointer-events-none">
               <Image
                 src="/assets/Why%20you%20Choose%20us/smilling-male-office-worker.png"
-                alt="Professional STR Assistant"
+                alt="Smiling professional Airbnb assistant representative"
                 fill
+                sizes="327px"
                 className="object-contain"
                 priority
               />
@@ -147,7 +150,13 @@ export default function WhyChooseUs() {
             {/* Listing Card (Group 39886) */}
             <div className="absolute left-[-70px] top-[34px] w-[254px] h-[105px] z-30 bg-white rounded-[15px] shadow-xl p-3 flex gap-3 border border-white/50 backdrop-blur-sm">
               <div className="relative w-[100px] h-full rounded-[8px] overflow-hidden shrink-0">
-                <Image src="/assets/Why%20you%20Choose%20us/room-image.png" alt="Smart Dashboard Visualization" fill className="object-cover" />
+                <Image 
+                  src="/assets/Why%20you%20Choose%20us/room-image.png" 
+                  alt="Beautiful listing interior visualization" 
+                  fill 
+                  sizes="100px"
+                  className="object-cover" 
+                />
               </div>
               <div className="flex flex-col justify-center gap-1.5 overflow-hidden">
                 <div className="w-[80px] h-[6px] bg-gray-100 rounded-full"></div>

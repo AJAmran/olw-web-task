@@ -16,15 +16,18 @@ export default function CTASection() {
           className="bg-[#F9FAFB] rounded-[32px] p-12 md:p-20 text-center flex flex-col items-center gap-8 border border-gray-50"
         >
           {/* Avatar Group */}
-          <div className="flex -space-x-4">
+          <div className="flex -space-x-4" aria-label="Our team members">
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-4 border-white bg-[#ABB677] overflow-hidden shadow-sm">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alec" alt="Team Member" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alec" alt="Alec, team member" width={64} height={64} />
             </div>
             <div className="w-14 h-14 md:w-20 md:h-20 rounded-full border-4 border-white bg-[#C7B9DA] overflow-hidden z-10 -mt-1 shadow-md">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Olivia" alt="Team Member" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Olivia" alt="Olivia, team member" width={80} height={80} />
             </div>
             <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border-4 border-white bg-[#D9B9BB] overflow-hidden shadow-sm">
-              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lori" alt="Team Member" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Lori" alt="Lori, team member" width={64} height={64} />
             </div>
           </div>
 

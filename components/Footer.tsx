@@ -36,10 +36,10 @@ export default function Footer() {
 
           {/* Brand & Description */}
           <div className="flex flex-col items-start">
-            <Link href="/" className="mb-8">
+            <Link href="/" className="mb-8" aria-label="Go to home page">
               <Image
                 src="/assets/googlelogo.png"
-                alt="Logo"
+                alt="Airbnb Assistants Brand Logo"
                 width={120}
                 height={40}
                 className="h-auto"

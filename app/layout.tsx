@@ -11,11 +11,31 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Airbnb Assistants - Professional Property Management & Automation Tools",
+  title: {
+    template: '%s | Airbnb Assistants',
+    default: 'Airbnb Assistants - Professional Property Management & Automation Tools',
+  },
   description: "Scale your Airbnb business with intelligent automation, smart listing tools, and world-class guest support. The ultimate STR assistant platform.",
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('https://airbnb-assistants.vercel.app'),
   alternates: {
     canonical: '/',
+  },
+  openGraph: {
+    title: 'Airbnb Assistants',
+    description: 'Scale your Airbnb business with intelligent automation.',
+    url: 'https://airbnb-assistants.vercel.app',
+    siteName: 'Airbnb Assistants',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Airbnb Assistants',
+    description: 'Scale your Airbnb business with intelligent automation.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
   appleWebApp: {
     title: 'Airbnb Assistants',
@@ -28,6 +48,7 @@ export const viewport = {
   themeColor: '#ED3C6A',
   width: 'device-width',
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({

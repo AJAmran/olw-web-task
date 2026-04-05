@@ -23,7 +23,11 @@ export default function TrustedBy() {
         </h2>
       </Container>
 
-      <div className="bg-[#F6F6F6] w-full h-[100px] flex items-center overflow-hidden">
+      <div 
+        className="bg-[#F6F6F6] w-full h-[100px] flex items-center overflow-hidden"
+        role="region" 
+        aria-label="Trusted platform partners"
+      >
         <motion.div 
           className="flex gap-12 lg:gap-16 items-center px-4"
           animate={{ x: ["0%", "-50%"] }}
@@ -43,8 +47,9 @@ export default function TrustedBy() {
             >
               <Image
                 src={logo.src}
-                alt={logo.alt}
+                alt={`${logo.alt} logo`}
                 fill
+                sizes={`${logo.width}px`}
                 className="object-contain"
                 priority={index < 7}
               />

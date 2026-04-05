@@ -76,7 +76,7 @@ export default function ClientReview() {
         </div>
 
         {/* Review Slider */}
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full overflow-hidden" role="region" aria-label="Customer reviews carousel">
           {/* Navigation Arrows */}
           <div className="absolute top-1/2 left-4 lg:left-12 -translate-y-1/2 z-30">
             <button 
@@ -116,7 +116,13 @@ export default function ClientReview() {
                 >
                   {/* Avatar */}
                   <div className="relative w-[112px] h-[112px] rounded-full overflow-hidden shrink-0 bg-gray-100">
-                     <Image src={review.image} alt={review.name} fill className="object-cover" />
+                     <Image 
+                        src={review.image} 
+                        alt={`Photo of ${review.name}`} 
+                        fill 
+                        sizes="112px"
+                        className="object-cover" 
+                     />
                   </div>
 
                   {/* Content */}

@@ -87,7 +87,8 @@ export default function Pricing() {
                 type="button"
                 onClick={() => setIsYearly(!isYearly)}
                 className="w-[64px] h-[32px] bg-[#D0D5DD]/40 rounded-full p-1 transition-colors relative flex items-center cursor-pointer"
-                aria-label="Toggle billing cycle"
+                aria-label="Toggle between monthly and yearly billing"
+                aria-pressed={isYearly}
               >
                 <motion.div
                   animate={{ x: isYearly ? 32 : 0 }}
@@ -106,9 +107,10 @@ export default function Pricing() {
                   <div className="absolute left-0 top-0 w-full h-full">
                     <Image
                       src="/price-saving-arrow.png"
-                      alt="Pricing Growth Trend"
+                      alt="Arrow pointing to yearly savings"
                       width={120}
                       height={60}
+                      style={{ width: 'auto', height: 'auto' }}
                       className="object-contain transform rotate-12"
                     />
                   </div>

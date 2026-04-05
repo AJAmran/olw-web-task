@@ -38,8 +38,9 @@ export default function GettingStarted() {
                   <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-105">
                     <Image
                       src={step.icon}
-                      alt={step.title}
+                      alt={`Step ${step.number}: ${step.title}`}
                       fill
+                      sizes="(max-width: 768px) 100vw, 340px"
                       className="object-contain"
                     />
                   </div>

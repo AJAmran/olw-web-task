@@ -182,6 +182,7 @@ export default function Hero() {
             {/* See Pricing */}
             <NextLink
               href="#pricing"
+              aria-label="View pricing plans"
               className="absolute flex items-center justify-center font-medium text-[14px] leading-[100%] text-center underline text-black hover:text-[#ED3C6A] transition-colors"
               style={{
                 left: '50%',

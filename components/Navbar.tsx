@@ -59,13 +59,18 @@ export default function Navbar() {
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-gray-600 hover:text-[#F34170] transition-colors"
           aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
         >
           {isOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
 
         {/* Mobile menu overlay */}
         {isOpen && (
-          <div className="absolute top-full left-0 w-full bg-white border-b border-gray-100 md:hidden z-50 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div 
+            id="mobile-menu"
+            className="absolute top-full left-0 w-full bg-white border-b border-gray-100 md:hidden z-50 animate-in fade-in slide-in-from-top-4 duration-300"
+          >
             <div className="flex flex-col p-6 gap-6">
               {NAV_LINKS.map((link) => (
                 <NextLink

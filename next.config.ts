@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
@@ -44,12 +46,14 @@ const nextConfig: NextConfig = {
             key: "Cross-Origin-Resource-Policy",
             value: "same-origin",
           },
-          // Tighter CSP without unsafe-eval for Lighthouse Best Practices
           {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline'",
+              // React/Turbopack requires eval() in dev for callstack reconstruction
+              isDev
+                ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+                : "script-src 'self' 'unsafe-inline'",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com data:",
               "img-src 'self' data: https://api.dicebear.com blob:",
@@ -66,4 +70,3 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
-

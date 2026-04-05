@@ -39,8 +39,9 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${dmSans.variable} font-sans h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="">
+      <body className="" suppressHydrationWarning>
         <Navbar />
         <main className="min-h-full flex flex-col">{children}</main>
         <Footer />

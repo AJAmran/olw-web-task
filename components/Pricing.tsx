@@ -74,7 +74,7 @@ export default function Pricing() {
             title="Airbnb Assistant" 
             highlightedTitle="pricing" 
             description="Choose a plan that’s right for you"
-            className="!mb-0"
+            className="mb-0!"
           />
 
           <div className="flex items-center justify-center relative max-w-3xl mx-auto mt-8">

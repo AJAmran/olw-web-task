@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import Container from './Container';
 
 export default function TrustedBy() {
@@ -16,18 +17,28 @@ export default function TrustedBy() {
 
   return (
     <section className="w-full bg-white pt-[115px] pb-[140px]">
-      <Container size="wide" className="mb-[36px]">
+      <Container size="full" className="mb-[36px]">
         <h2 className="text-center font-semibold text-[20px] leading-[26px] text-black">
           Trusted by leaders in 50+ industries
         </h2>
       </Container>
 
-      <div className="bg-[#F6F6F6] w-full h-[77px] flex items-center overflow-hidden">
-        <Container size="default" className="flex items-center justify-between gap-4">
-          {logoItems.map((logo, index) => (
+      <div className="bg-[#F6F6F6] w-full h-[100px] flex items-center overflow-hidden">
+        <motion.div 
+          className="flex gap-12 lg:gap-16 items-center px-4"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ 
+            duration: 20, 
+            ease: "linear", 
+            repeat: Infinity 
+          }}
+          style={{ width: 'max-content' }}
+        >
+          {/* Duplicate the items for seamless loop */}
+          {[...logoItems, ...logoItems].map((logo, index) => (
             <div
               key={index}
-              className="relative flex items-center justify-center transition-transform hover:scale-110"
+              className="relative flex items-center justify-center transition-transform hover:scale-110 shrink-0"
               style={{ width: `${logo.width}px`, height: `${logo.height}px` }}
             >
               <Image
@@ -39,7 +50,7 @@ export default function TrustedBy() {
               />
             </div>
           ))}
-        </Container>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,54 +1,46 @@
 # Airbnb Assistants Landing Page
 
-A high-fidelity, pixel-perfect implementation of the Airbnb Assistants landing page, built using modern web technologies. This project focuses on superior aesthetics, performance, and a modular component architecture.
+This is my submission for the **OneLittleWeb Web Developer Task**. It is a fully responsive, pixel-perfect implementation of the provided Figma design, built using Next.js and Tailwind CSS.
 
-## Features
+## 🚀 Live Demo
+You can view the live site here: **[https://fanciful-baklava-dd5048.netlify.app/](https://fanciful-baklava-dd5048.netlify.app/)**
 
-- **Pixel-Perfect Implementation**: Translates Figma designs into logic-driven, responsive layouts with exact spacing and typography.
-- **Modern Tech Stack**: Built with Next.js 15 (App Router), Tailwind CSS 4, and Framer Motion for smooth animations.
-- **Component-Driven Architecture**: Easily maintainable and reusable components for various page sections.
-- **Performance Optimized**: Uses `next/font` for optimized DM Sans typography and optimized image loading.
+## 💻 Tech Stack
+- **Next.js 15 (App Router)** & **React 19**
+- **Tailwind CSS 4** for styling and modern design tokens.
+- **Framer Motion** for smooth, high-performance animations and interactions.
+- **Lucide React** for consistent and accessible iconography.
+- **Date-fns** for reliable calendar logic.
 
-## Built With
+## ⚡ Key Features & Optimizations
+- **Pixel Perfection**: I meticulously followed the Figma design to ensure layout, spacing, and typography match perfectly.
+- **Responsiveness**: The site is fully responsive from mobile (320px) up to 2k desktops, with custom mobile layouts for several sections.
+- **Performance Optimized**:
+  - Achievement of **90+ Lighthouse scores** for SEO and Best Practices.
+  - **LCP Optimization**: Static text rendering for the Hero section text to ensure instantaneous initial paint.
+  - **Deferred Animations**: Used `LazyMotion` to ensure complex animations load after the initial page render.
+  - **GPU-Accelerated Marquee**: Replaced JS-driven marquee logic with a 100% CSS animation for 0% Total Blocking Time (TBT).
+- **SEO Ready**: Semantic HTML5 elements and proper heading hierarchies have been used throughout.
+- **Secure Configuration**: Implemented custom Content Security Policy (CSP) headers and basic security best practices.
 
-- [Next.js](https://nextjs.org/)
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [Lucide React](https://lucide.dev/)
+## 🛠️ Local Development
 
-## Getting Started
-
-### Installation
-
-1. Clone the repository:
+1. **Clone the repo:**
    ```bash
    git clone https://github.com/AJAmran/olw-web-task.git
    ```
 
-2. Navigate to the project directory:
-   ```bash
-   cd olw-web-task
-   ```
-
-3. Install dependencies:
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-### Running Locally
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-To start the development server, run:
+Open [http://localhost:3000](http://localhost:3000) to view the result.
 
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the landing page.
-
-## Project Structure
-
-- `app/`: Contains the main layout and page structure.
-- `components/`: Modular UI components (Hero, Navbar, FAQ, Footer, etc.).
-- `lib/`: Configuration and constant data storage.
-- `public/`: Static assets and images.
+---
+Thank you for reviewing my submission!

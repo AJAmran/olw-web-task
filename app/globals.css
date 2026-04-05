@@ -62,7 +62,30 @@ body {
   animation: marquee-scroll 20s linear infinite;
   will-change: transform;
 }
+/* Lightweight loading bar animation */
+@keyframes progress-animation {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(0.7); }
+  100% { transform: scaleX(1); }
+}
+
+.animate-progress {
+  animation: progress-animation 2s ease-in-out infinite;
+}
+
+/* Enhanced pulse for skeletons */
+@keyframes skeleton-pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+.animate-pulse {
+  animation: skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; }
+  .animate-progress, .animate-pulse { animation: none; }
 }
 

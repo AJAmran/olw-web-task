@@ -31,20 +31,20 @@ export default function NotFound() {
           </Link>
           
           <Link 
-            href="/"
+            href="/#faq"
             className="flex items-center gap-3 text-black font-bold px-10 py-4 rounded-full border-2 border-gray-100 hover:border-black transition-all duration-300"
           >
             <ArrowLeft size={20} />
-            Get Support
+            View FAQ
           </Link>
         </div>
       </div>
 
-      {/* Decorative Brand Icons */}
-      <div className="mt-20 flex gap-12 opacity-20 grayscale">
-         <Image src="/assets/hero-section-images/airbnb.png" alt="Airbnb" width={40} height={40} />
-         <Image src="/assets/hero-section-images/Vrbo.png" alt="Vrbo" width={40} height={40} />
-         <Image src="/assets/hero-section-images/TripAdvisor.png" alt="Tripadvisor" width={40} height={40} />
+      {/* Decorative Brand Icons - purely decorative, empty alt */}
+      <div className="mt-20 flex gap-12 opacity-20 grayscale" aria-hidden="true">
+         <Image src="/assets/hero-section-images/airbnb.png" alt="" width={40} height={40} />
+         <Image src="/assets/hero-section-images/Vrbo.png" alt="" width={40} height={40} />
+         <Image src="/assets/hero-section-images/TripAdvisor.png" alt="" width={40} height={40} />
       </div>
     </main>
   );

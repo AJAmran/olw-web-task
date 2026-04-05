@@ -5,7 +5,7 @@
   --foreground: #111827;
   --primary: #ED3C6A;
   --secondary: #111827;
-  --muted: #4B5563;
+  --muted: #374151;
   --border: #E5E7EB;
 }
 
@@ -21,6 +21,7 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 .glass-nav {
@@ -35,15 +36,15 @@ html {
   @apply py-16 lg:py-24;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-dm-sans), sans-serif;
 }
+
+/* Composited animation hints - avoid non-composited animation Lighthouse warning */
+[data-motion-composited] {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+

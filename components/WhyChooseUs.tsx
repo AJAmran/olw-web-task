@@ -75,7 +75,7 @@ const Calendar = () => {
                   } ${isEnd ? 'rounded-r-sm' : ''
                   } ${!isStart && !isEnd ? 'opacity-20' : ''} scale-y-[1.1]`}></div>
               )}
-              <span className={`text-[9px] font-bold relative z-10 ${isSelected && (isStart || isEnd) ? 'text-white' : currentMonth ? 'text-secondary' : 'text-gray-300'
+              <span className={`text-[9px] font-bold relative z-10 ${isSelected && (isStart || isEnd) ? 'text-white' : currentMonth ? 'text-secondary' : 'text-gray-500'
                 }`}>{format(day, 'd')}</span>
             </div>
           );
@@ -105,20 +105,20 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             className="z-10 text-center lg:text-left flex flex-col items-center lg:items-start"
           >
-            <h2 className="text-[36px] leading-[47px] font-bold text-black mb-[24px] max-w-[416px]">
+            <h2 className="text-[26px] sm:text-[30px] lg:text-[36px] leading-tight font-bold text-black mb-5 max-w-[416px]">
               Few Reasons Why you Choose us?
             </h2>
 
-            <p className="text-[14px] leading-[18px] text-black mb-[32px] max-w-[457px] font-semibold">
+            <p className="text-[13px] sm:text-[14px] leading-relaxed text-black mb-6 max-w-[457px] font-semibold">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             </p>
 
             <FeatureList 
               items={chooseUsFeatures} 
-              className="mb-[44px]"
+              className="mb-8 sm:mb-[44px] w-full"
             />
 
-            <ScheduleMeetingBtn className="min-w-[201px] h-[50px] px-4" />
+            <ScheduleMeetingBtn className="w-full sm:w-auto sm:min-w-[201px] h-[50px] px-4" />
           </motion.div>
 
           {/* Right Visual Visual Composition area */}
@@ -164,7 +164,7 @@ export default function WhyChooseUs() {
                 <div className="flex gap-0.5">
                   {[1, 2, 3, 4, 5].map(s => <Star key={s} size={8} fill="#FF9D00" color="#FF9D00" />)}
                 </div>
-                <div className="text-[16px] font-bold text-[#ED3C6A]">$75<span className="text-gray-400 text-[10px] font-normal ml-1">/night</span></div>
+                <div className="text-[16px] font-bold text-[#ED3C6A]">$75<span className="text-gray-500 text-[10px] font-normal ml-1">/night</span></div>
               </div>
             </div>
 

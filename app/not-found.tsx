@@ -40,11 +40,11 @@ export default function NotFound() {
         </div>
       </div>
 
-      {/* Decorative Brand Icons - purely decorative, empty alt */}
+      {/* Decorative Brand Icons */}
       <div className="mt-20 flex gap-12 opacity-20 grayscale" aria-hidden="true">
-         <Image src="/assets/hero-section-images/airbnb.png" alt="" width={40} height={40} />
-         <Image src="/assets/hero-section-images/Vrbo.png" alt="" width={40} height={40} />
-         <Image src="/assets/hero-section-images/TripAdvisor.png" alt="" width={40} height={40} />
+         <Image src="/assets/hero-section-images/airbnb.png" alt="Airbnb logo" width={40} height={40} />
+         <Image src="/assets/hero-section-images/Vrbo.png" alt="Vrbo logo" width={40} height={40} />
+         <Image src="/assets/hero-section-images/TripAdvisor.png" alt="TripAdvisor logo" width={40} height={40} />
       </div>
     </main>
   );

@@ -12,10 +12,17 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -29,8 +36,9 @@ export default function Navbar() {
             alt="Airbnb Assistants Logo"
             width={120}
             height={40}
-            className="object-contain"
+            className="object-contain w-auto h-auto"
             priority
+            loading="eager"
           />
         </NextLink>
 

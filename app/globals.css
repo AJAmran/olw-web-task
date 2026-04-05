@@ -42,9 +42,27 @@ body {
   font-family: var(--font-dm-sans), sans-serif;
 }
 
+
 /* Composited animation hints - avoid non-composited animation Lighthouse warning */
 [data-motion-composited] {
   will-change: transform, opacity;
   transform: translateZ(0);
+}
+
+/* CSS marquee — runs on GPU compositor, zero JS/TBT cost */
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  width: max-content;
+  animation: marquee-scroll 20s linear infinite;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
 }
 

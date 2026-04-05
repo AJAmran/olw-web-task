@@ -77,28 +77,38 @@ export default function ClientReview() {
 
         {/* Review Slider */}
         <div className="relative w-full overflow-hidden" role="region" aria-label="Customer reviews carousel">
-          {/* Navigation Arrows */}
-          <div className="absolute top-1/2 left-4 lg:left-12 -translate-y-1/2 z-30">
+          {/* Navigation Arrows - hidden on xs, shown sm+ */}
+          <div className="hidden sm:block absolute top-1/2 left-2 sm:left-4 lg:left-12 -translate-y-1/2 z-30">
             <button 
               onClick={prevSlide}
-              className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary border border-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary border border-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="Previous review"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={20} />
             </button>
           </div>
-          <div className="absolute top-1/2 right-4 lg:right-12 -translate-y-1/2 z-30">
+          <div className="hidden sm:block absolute top-1/2 right-2 sm:right-4 lg:right-12 -translate-y-1/2 z-30">
             <button 
               onClick={nextSlide}
-              className="w-12 h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary border border-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
+              className="w-10 h-10 sm:w-12 sm:h-12 bg-white shadow-lg rounded-full flex items-center justify-center text-primary border border-gray-100 hover:bg-primary hover:text-white transition-all duration-300"
               aria-label="Next review"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={20} />
+            </button>
+          </div>
+
+          {/* Mobile: tap prev/next buttons below card */}
+          <div className="flex sm:hidden justify-center gap-4 mb-4">
+            <button onClick={prevSlide} className="w-10 h-10 bg-white shadow rounded-full flex items-center justify-center text-primary border border-gray-100" aria-label="Previous review">
+              <ChevronLeft size={18} />
+            </button>
+            <button onClick={nextSlide} className="w-10 h-10 bg-white shadow rounded-full flex items-center justify-center text-primary border border-gray-100" aria-label="Next review">
+              <ChevronRight size={18} />
             </button>
           </div>
 
           <motion.div 
-            className="flex gap-6 lg:gap-8 px-6 pb-[40px]"
+            className="flex gap-4 sm:gap-6 lg:gap-8 px-4 sm:px-6 pb-[40px]"
             animate={{ x: `calc(50% - ${(currentIndex * 530) + (currentIndex * 32) + 265}px)` }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
@@ -107,33 +117,33 @@ export default function ClientReview() {
               return (
                 <motion.div
                   key={review.id}
-                  className={`w-[530px] h-[200px] rounded-[11px] flex items-center p-[24px] gap-[24px] shrink-0 transition-all duration-500
+                  className={`w-[calc(100vw-2rem)] sm:w-[480px] lg:w-[530px] min-h-[160px] sm:h-[200px] rounded-[11px] flex flex-col sm:flex-row items-start sm:items-center p-5 sm:p-[24px] gap-4 sm:gap-[24px] shrink-0 transition-all duration-500
                     ${isActive 
-                      ? 'bg-white shadow-[0px_4px_77.4px_rgba(136,136,136,0.41)] scale-105 z-20' 
+                      ? 'bg-white shadow-[0px_4px_77.4px_rgba(136,136,136,0.41)] scale-100 sm:scale-105 z-20' 
                       : 'bg-[#F6F6F6] border border-[#F6F6F6] opacity-40 scale-95 z-10'
                     }
                   `}
                 >
                   {/* Avatar */}
-                  <div className="relative w-[112px] h-[112px] rounded-full overflow-hidden shrink-0 bg-gray-100">
+                  <div className="relative w-16 h-16 sm:w-[112px] sm:h-[112px] rounded-full overflow-hidden shrink-0 bg-gray-100">
                      <Image 
                         src={review.image} 
                         alt={`Photo of ${review.name}`} 
                         fill 
-                        sizes="112px"
+                        sizes="(max-width: 640px) 64px, 112px"
                         className="object-cover" 
                      />
                   </div>
 
                   {/* Content */}
-                  <div className="flex flex-col gap-[8px] text-left">
-                    <h3 className="text-[20px] font-bold text-black">{review.name}</h3>
-                    <p className="text-[12px] leading-[16px] text-black font-medium line-clamp-3">
+                  <div className="flex flex-col gap-[6px] text-left">
+                    <h3 className="text-[16px] sm:text-[20px] font-bold text-black">{review.name}</h3>
+                    <p className="text-[11px] sm:text-[12px] leading-[16px] text-black font-medium line-clamp-3">
                       {review.text}
                     </p>
-                    <div className="flex gap-[4px] mt-[4px]">
+                    <div className="flex gap-[4px] mt-[2px]">
                       {[...Array(review.stars)].map((_, s) => (
-                        <Star key={s} size={14} fill="#FF9D00" color="#FF9D00" />
+                        <Star key={s} size={12} fill="#FF9D00" color="#FF9D00" />
                       ))}
                     </div>
                   </div>

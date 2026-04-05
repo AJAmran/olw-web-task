@@ -30,9 +30,9 @@ const GithubIcon = ({ size = 20 }: { size?: number }) => (
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-white pt-[100px] border-t border-[#D6D6D6]">
-      <div className="w-full max-w-7xl mx-auto px-6 pb-[100px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[64px]">
+    <footer className="w-full bg-white pt-[60px] sm:pt-[80px] lg:pt-[100px] border-t border-[#D6D6D6]">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 pb-[60px] sm:pb-[80px] lg:pb-[100px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-8 lg:gap-[64px]">
 
           {/* Brand & Description */}
           <div className="flex flex-col items-start">
@@ -42,7 +42,7 @@ export default function Footer() {
                 alt="Airbnb Assistants Brand Logo"
                 width={120}
                 height={40}
-                className="h-auto"
+                className="w-auto h-auto"
               />
             </Link>
             <p className="text-[14px] leading-[22px] text-[#666666] font-medium max-w-[320px] mb-8">

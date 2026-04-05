@@ -77,10 +77,11 @@ export default function Pricing() {
             className="mb-0!"
           />
 
-          <div className="flex items-center justify-center relative max-w-3xl mx-auto mt-8">
-            <div className="flex items-center gap-[24px]">
-              <span className={`text-[16px] transition-colors ${!isYearly ? 'text-[#191D23] font-medium' : 'text-gray-400 font-medium'}`}>
-                Pay Monthly
+          <div className="flex flex-col items-center justify-center gap-3 mt-6 sm:mt-8">
+            {/* Toggle Row */}
+            <div className="flex items-center gap-[16px] sm:gap-[24px]">
+              <span className={`text-[14px] sm:text-[16px] transition-colors ${!isYearly ? 'text-[#191D23] font-medium' : 'text-gray-400 font-medium'}`}>
+                Monthly
               </span>
               
               <button
@@ -88,7 +89,7 @@ export default function Pricing() {
                 onClick={() => setIsYearly(!isYearly)}
                 className="w-[64px] h-[32px] bg-[#D0D5DD]/40 rounded-full p-1 transition-colors relative flex items-center cursor-pointer"
                 aria-label="Toggle between monthly and yearly billing"
-                aria-pressed={isYearly}
+                aria-pressed={isYearly ? "true" : "false"}
               >
                 <motion.div
                   animate={{ x: isYearly ? 32 : 0 }}
@@ -97,12 +98,21 @@ export default function Pricing() {
                 />
               </button>
               
-              <span className={`text-[16px] transition-colors ${isYearly ? 'text-[#191D23] font-medium' : 'text-gray-400 font-medium'}`}>
-                Pay Yearly
+              <span className={`text-[14px] sm:text-[16px] transition-colors ${isYearly ? 'text-[#191D23] font-medium' : 'text-gray-400 font-medium'}`}>
+                Yearly
               </span>
+            </div>
 
-              {/* Save 25% Callout */}
-              <div className="absolute left-[calc(50%+100px)] top-[-10px] pointer-events-none group">
+            {/* Save 25% badge — inline on mobile, arrow callout visible on lg+ */}
+            {isYearly && (
+              <div className="flex items-center gap-1 lg:hidden">
+                <span className="text-primary font-semibold text-[14px]">🎉 Save 25%</span>
+              </div>
+            )}
+
+            {/* Desktop arrow callout — hidden on mobile to avoid overflow */}
+            <div className="hidden lg:block relative w-full h-[87px] mt-[-40px]">
+              <div className="absolute left-[calc(50%+100px)] top-0 pointer-events-none">
                 <div className="relative w-[185px] h-[87px]">
                   <div className="absolute left-0 top-0 w-full h-full">
                     <Image
@@ -168,7 +178,7 @@ export default function Pricing() {
                       {j < plan.activeFeatures ? (
                         <Check size={14} className={plan.isPopular ? "text-white" : "text-[#ED3C6A]"} />
                       ) : (
-                        <span className="text-gray-300 text-[10px]">✕</span>
+                        <span className="text-gray-500 text-[10px]">✕</span>
                       )}
                     </div>
                     <span className={`text-[16px] font-normal ${j < plan.activeFeatures
